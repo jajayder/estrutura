@@ -1,0 +1,43 @@
+package controle;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		Scanner leia = new Scanner(System.in);
+		Lista lista = new Lista();
+		String continuar = "s";
+		int opc = 0;
+		while(continuar != "n" ||continuar != "N" ){
+		System.out.println("Digite uma opção:");
+		System.out.println("1 - Para inserir números.");
+		System.out.println("2 - Listar - Conforme ordem de digitação.");
+		System.out.println("3 - Listar - Ordenada");
+		opc = leia .nextInt();
+			switch (opc) {
+			case 1:
+				int num = 1;
+				lista.adicionar(num);	break;
+			case 2: 
+				System.out.println("***LISTA DESODERNADA***");
+				lista.listar();	//lista desordenada	
+				break;
+			case 3:
+				lista.ordenar(); //ordena
+				System.out.println("***LISTA ODERNADA***");
+				lista.listar();	//lista ordenada
+				break;
+			default:System.out.println("Opção inválida");
+				break;
+			}
+		
+		System.out.println("Continuar?(S/N)");
+		continuar = leia.next();
+	}
+	
+	System.out.println("Obrigado!");
+	
+	}
+}
